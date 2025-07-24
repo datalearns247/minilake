@@ -3,10 +3,10 @@ Minilake adalah data lake yang bisa dijalankan langsung di laptop, dirancang unt
 
 ## Penggunaan
 1. Clone repository
-```
-git clone https://github.com/datalearns247/minilake.git
-cd minilake
-```
+   ```
+   git clone https://github.com/datalearns247/minilake.git
+   cd minilake
+   ```
 
 2. Jalankan docker
 ```
