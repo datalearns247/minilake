@@ -1,0 +1,69 @@
+services:
+  minilake:
+    image: datalearns247/minilake:1.07.24
+    container_name: minilake
+    networks:
+      datalake_net:
+    depends_on:
+      - minio
+    volumes:
+      - ./notebooks:/home/iceberg/notebooks
+      - ./data/metastore:/home/iceberg/metastore
+    environment:
+      - AWS_ACCESS_KEY_ID=admin
+      - AWS_SECRET_ACCESS_KEY=password
+      - AWS_REGION=us-east-1
+      - CATALOG_WAREHOUSE=s3://warehouse/
+      - CATALOG_IO__IMPL=org.apache.iceberg.aws.s3.S3FileIO
+      - CATALOG_S3_ENDPOINT=http://minio:9000
+      - CATALOG_URI=jdbc:sqlite:file:/home/iceberg/metastore/iceberg.db
+    ports:
+      - 8888:8888   # jupyter notebook
+      - 8080:8080   # Spark master web UI
+      - 10000:10000 # Spark thrift server
+      - 10001:10001 
+    entrypoint: >
+      /bin/sh -c "
+      ./entrypoint.sh;
+      "
+
+  minio:
+    image: minio/minio
+    container_name: minio
+    environment:
+      - MINIO_ROOT_USER=admin
+      - MINIO_ROOT_PASSWORD=password
+      - MINIO_DOMAIN=minio
+    volumes:
+      - ./data/minio:/data
+    networks:
+      datalake_net:
+        aliases:
+          - warehouse.minio
+    ports:
+      - 9001:9001
+      - 9000:9000
+    command: ["server", "/data", "--console-address", ":9001"]
+
+  mc:
+    depends_on:
+      - minio
+    image: minio/mc
+    container_name: mc
+    networks:
+      datalake_net:
+    environment:
+      - AWS_ACCESS_KEY_ID=admin
+      - AWS_SECRET_ACCESS_KEY=password
+      - AWS_REGION=us-east-1
+    entrypoint: >
+      /bin/sh -c "
+      /usr/bin/mc alias set myminio http://minio:9000 admin password;
+      /usr/bin/mc mb myminio/warehouse --ignore-existing;
+      /usr/bin/mc policy set public myminio/warehouse;
+      exit 0;
+      "
+  
+networks:
+  datalake_net:
+  #  driver: bridge
