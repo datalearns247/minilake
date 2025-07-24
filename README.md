@@ -1,2 +1,2 @@
-# minilake
-Minilake is your data lake on your laptop for mastering the modern data stack 
+# Minilake
+Minilake adalah data lake yang bisa dijalankan langsung di laptop, dirancang untuk membantu kamu untuk memahami dan menguasai modern data stack.
