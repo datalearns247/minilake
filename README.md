@@ -1,5 +1,5 @@
 # Minilake
-Minilake adalah sebuah solusi platform data lakehouse yang berjalan secara lokal, ringan, dan tanpa konfigurasi yang rumit. Tujuannya sederhana: membantu siapa pun untuk membangun, belajar, dan bereksperimen dengan teknologi data terkini secara cepat dan efisien. Tidak perlu server, tidak perlu cloud, hanya diperlukan laptop dan data.
+Minilake adalah sebuah solusi platform data lakehouse yang berjalan secara lokal, ringan, dan tanpa konfigurasi yang rumit. Tujuannya sederhana yaitu membantu siapa pun yang ingin membangun, belajar, dan bereksperimen dengan teknologi data terkini secara cepat dan efisien. Tidak perlu server, tidak perlu cloud, hanya diperlukan laptop dan data.
 
 ## Apa yang Membuat Minilake Berbeda?
 1. Teknologi Open Source – Pemilihan teknologi hanya yang bersifat open source, sehingga siapaun bebas menggunakannya
