@@ -12,7 +12,7 @@ Minilake adalah sebuah solusi platform data lakehouse yang berjalan secara lokal
 * Mahasiswa yang ingin memahami dan mencoba teknologi data lakehouse tanpa tergantung infrastruktur kampus
 * Dosen bisa menggunakan Minilake sebagai alat bantu praktikum untuk mata kuliah Big Data atau Data Engineering
 * Data Engineer \& Analyst yang ingin prototyping pipeline secara lokal sebelum deployment ke lingkungan production
-* Komunitas data bisa menggunakan LakeLite untuk pelatihan ataupun workshop tanpa khawatir soal setup infrastruktur
+* Komunitas data bisa menggunakan Minilake untuk pelatihan ataupun workshop tanpa khawatir soal setup infrastruktur
 
 ## Teknologi Utama Yang Digunakan
 * Storage Layer - Minio
