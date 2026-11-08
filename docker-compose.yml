@@ -21,7 +21,7 @@ services:
       - RUSTFS_ACCESS_KEY=admin
       - RUSTFS_SECRET_KEY=password
     volumes:
-      - ./data/rustfs-data:/data
+      - ./data/rustfs/data:/data
     networks:
       net:
     # command: server /data
