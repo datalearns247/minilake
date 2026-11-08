@@ -1,4 +1,15 @@
 services:
+  # --- Fixes host directory permissions automatically ---
+  rustfs_init:
+    image: alpine:latest
+    user: "root"
+    volumes:
+      - ./data/rustfs/data:/fix_data
+      - ./data/rustfs/logs:/fix_logs
+    networks:
+      net:
+    command: chown -R 10001:10001 /fix_data /fix_logs
+    
   # --- RustFS Object Storage ---
   rustfs:
     image: rustfs/rustfs:latest
