@@ -15,7 +15,7 @@ Minilake adalah sebuah solusi platform data lakehouse yang berjalan secara lokal
 * Komunitas data bisa menggunakan Minilake untuk pelatihan ataupun workshop tanpa khawatir soal setup infrastruktur
 
 ## Teknologi Utama Yang Digunakan
-* Storage Layer - Minio
+* Storage Layer - RustFS
 * File Format -  Apache Parquet
 * Open Table Format - Apache Iceberg
 * Metadata Catalog - Local REST Catalog
