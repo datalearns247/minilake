@@ -25,7 +25,7 @@ Minilake adalah sebuah solusi platform data lakehouse yang berjalan secara lokal
 * Orchectrator - Apache Airflow (sedang dalam pengujian)
 * BI Tools - Metabase (sedang dalam pengujian)
 
-## Penggunaan
+## Bagaimana Memulainya?
 1. Clone repository
    ```
    git clone https://github.com/datalearns247/minilake.git
@@ -36,7 +36,19 @@ Minilake adalah sebuah solusi platform data lakehouse yang berjalan secara lokal
    ```
    docker compose up -d
    ```
+
+4. Cek service yang berjalan menggunakan
+   ```
+   docker compose ps
+   ```
+
+5. Akan tampil 2 service yaitu:
+   - minilake
+   - rustfs
+6. Buka browser dan masuk ke
+   - RustFS UI : http://localhost:9001 (gunakan user/pwd: **admin**/**password**)
+7. Buat bucket baru yang bernama **warehouse**
+8. Mengakses Jupyter Notebook melalui browser:
+   - http://localhost:8888
+9. Jalankan notebook **Hello World.ipnyb** untuk menguji apakah semua sudah berjalan dengan baik dan benar.
    
-3. Mengakses service melalui browser:
-   - Jupyter Notebook : http://localhost:8888
-   - Minio : http://localhost:9001
